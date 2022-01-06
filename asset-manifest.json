@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/fake-shop-api-react/static/css/main.5b85a11b.chunk.css",
-    "main.js": "/fake-shop-api-react/static/js/main.90f55c34.chunk.js",
-    "main.js.map": "/fake-shop-api-react/static/js/main.90f55c34.chunk.js.map",
+    "main.js": "/fake-shop-api-react/static/js/main.09bf7906.chunk.js",
+    "main.js.map": "/fake-shop-api-react/static/js/main.09bf7906.chunk.js.map",
     "runtime-main.js": "/fake-shop-api-react/static/js/runtime-main.c7bbd198.js",
     "runtime-main.js.map": "/fake-shop-api-react/static/js/runtime-main.c7bbd198.js.map",
-    "static/js/2.90d13891.chunk.js": "/fake-shop-api-react/static/js/2.90d13891.chunk.js",
-    "static/js/2.90d13891.chunk.js.map": "/fake-shop-api-react/static/js/2.90d13891.chunk.js.map",
+    "static/js/2.b2207131.chunk.js": "/fake-shop-api-react/static/js/2.b2207131.chunk.js",
+    "static/js/2.b2207131.chunk.js.map": "/fake-shop-api-react/static/js/2.b2207131.chunk.js.map",
     "index.html": "/fake-shop-api-react/index.html",
     "static/css/main.5b85a11b.chunk.css.map": "/fake-shop-api-react/static/css/main.5b85a11b.chunk.css.map",
-    "static/js/2.90d13891.chunk.js.LICENSE.txt": "/fake-shop-api-react/static/js/2.90d13891.chunk.js.LICENSE.txt",
+    "static/js/2.b2207131.chunk.js.LICENSE.txt": "/fake-shop-api-react/static/js/2.b2207131.chunk.js.LICENSE.txt",
     "static/media/cart.fcafbe43.png": "/fake-shop-api-react/static/media/cart.fcafbe43.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c7bbd198.js",
-    "static/js/2.90d13891.chunk.js",
+    "static/js/2.b2207131.chunk.js",
     "static/css/main.5b85a11b.chunk.css",
-    "static/js/main.90f55c34.chunk.js"
+    "static/js/main.09bf7906.chunk.js"
   ]
 }
