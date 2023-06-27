@@ -72,11 +72,13 @@ h4 {
 }
 
 .shopitem {
+  height: 100%;
   transition: background-color 1s;
   display:flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .shopitem:hover, .shopitem:active {
@@ -96,7 +98,8 @@ h4 {
 .fullinfo {
   max-width: 50vw;
   margin: 0 auto;
-  border-top: 4px solid violet;
+  border-top: 6px solid rgb(9, 32, 50);
+  padding-bottom: 1em;
 }
 
 .cart {

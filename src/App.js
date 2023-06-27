@@ -3,7 +3,7 @@ import About from './About';
 import Shop from './Shop';
 import Nav from './Nav';
 import ItemDetail from './ItemDetail';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const Home = () => (
   <div>
@@ -19,13 +19,13 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/fake-shop-api-react/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/shop" exact component={Shop} />
-          <Route path="/shop/:id" component={ItemDetail} />
-        </Switch>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/fake-shop-api-react/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/shop' element={<Shop/>} />
+          <Route path='/shop/:id' element={<ItemDetail/>} />
+        </Routes>
       </div>
     </Router>
   );

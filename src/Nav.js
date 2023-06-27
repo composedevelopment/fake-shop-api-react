@@ -8,7 +8,6 @@ import Modal from './Modal.js'
 const STORAGE_KEY = "cart.items"
 
 function Nav() {
-  let dispatch = useDispatch()
   let select = useSelector((state) => (state))
 
     const [cartText, setCartText] = useState("Cart")

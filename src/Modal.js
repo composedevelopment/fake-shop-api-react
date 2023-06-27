@@ -4,6 +4,13 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux'
 
+let formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  });
+
+let price = 0
+
 const Background = styled.div`
   width: 100%;
   height: 100%;
@@ -119,10 +126,14 @@ export default ({ showModal, setShowModal }) => {
     if (selector.length > 0)
     {
     let counts = {};
+    price = 0
     let allitems = selector;
-    allitems.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-      setModalContent(Object.keys(counts).map(function (key,index) {
-        return <div key={key}>{key} QTY: {counts[key]}</div>
+    allitems.forEach(function (x) { counts[x.title] = (counts[x.title] || 0) + 1; });
+    allitems.forEach(item => price += item.price);
+      setModalContent(Object.keys(counts).map(function (key) {
+        return <div>
+         <div>{key} <b>QTY:{counts[key]}</b></div>
+         </div>
       }))
     } 
     }, [selector]);
@@ -136,6 +147,8 @@ export default ({ showModal, setShowModal }) => {
             
               <ModalContent>
                 {modalContent}
+                <div style={{"height": "10px"}} />
+                {<b>Total: {formatter.format(price)}</b>}
                 {selector.length > 0 && <OrderButton
                 aria-label='Order items'
                 onClick={() => orderItems()}>

@@ -31,13 +31,15 @@ let formatter = new Intl.NumberFormat("en-US", {
     {(typeof items === 'string') && <h2>API call failed, please refresh</h2>}
     {(typeof items !== 'string') && <div className="grid">
       {items.map(itemMap => (
+        <Link to={`/shop/${itemMap.id}`}>
         <div className="shopitem" key={itemMap.id}>
-          <Link to={`/shop/${itemMap.id}`}>
+            <div style={{display: 'block'}}>
             <img width="200" height="200" src={itemMap.image} alt="item"/>
             <h4 className="itemprice">{formatter.format(itemMap.price)}</h4>  
             <h4 className="itemname">{itemMap.title}</h4>
-          </Link>
+            </div>
         </div>
+        </Link>
     ))}
   </div>}
   </>

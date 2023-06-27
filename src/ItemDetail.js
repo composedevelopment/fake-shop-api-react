@@ -1,14 +1,21 @@
 import {useState, useEffect} from 'react';
 import './App.css';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-function ItemDetail({match}) {
+let formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  });
+
+function ItemDetail() {
   let dispatch = useDispatch()
+  const params  = useParams()
 
   function add() {
-    if (match.params.id)
+    if (params.id)
     {
-    dispatch({type: "added", payload: item.title});
+    dispatch({type: "added", payload: {title: item.title, price: item.price}});
     }
   }
 
@@ -23,7 +30,7 @@ function ItemDetail({match}) {
         const itemFetch = await fetch(
             `https://fakestoreapi.com/products/
             ${
-            match.params.id
+            params.id
             }`
         );
         const item = await itemFetch.json();
@@ -36,9 +43,11 @@ function ItemDetail({match}) {
   return (
     <>
     {(item) && <div>
-      <img width="300" height="300" src={item.image} alt="item closeup"/>
+      {!item.image && <div style={{height: '300px'}}></div>}
+      {item.image && <img width="300" height="300" src={item.image} alt="item closeup"/>}
       <div className="fullinfo">
       <h1>{item.title}</h1>
+      {item.price && <h2 className="itemprice">{formatter.format(item.price)}</h2>}
       <h3 className="desc">{item.description}...</h3>
       <button onClick={() => add()}>Add to cart!</button>
       </div>
