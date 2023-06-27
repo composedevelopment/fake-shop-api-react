@@ -132,7 +132,7 @@ export default ({ showModal, setShowModal }) => {
     allitems.forEach(item => price += item.price);
       setModalContent(Object.keys(counts).map(function (key) {
         return <div>
-         <div>{key} <b>QTY:{counts[key]}</b></div>
+         <div>{key} <b>QTY: {counts[key]}</b></div>
          </div>
       }))
     } 
